@@ -1,0 +1,128 @@
+[
+    {
+        "name": "Plane tickets for Barcelona",
+        "value": -600,
+        "currency": "eur",
+        "date": "2024-04-27"
+    },
+    {
+        "name": "Groceries for this week",
+        "value": -80,
+        "currency": "eur",
+        "date": "2024-04-26"
+    },
+    {
+        "name": "A new pair of jeans",
+        "value": -20,
+        "currency": "eur",
+        "date": "2024-04-25"
+    },
+    {
+        "name": "Salary for April",
+        "value": 1700,
+        "currency": "eur",
+        "date": "2024-04-24"
+    },
+    {
+        "name": "Drinks for party",
+        "value": -30,
+        "currency": "eur",
+        "date": "2024-04-23"
+    },
+    {
+        "name": "Bills for this month",
+        "value": -120,
+        "currency": "eur",
+        "date": "2024-04-22"
+    },
+    {
+        "name": "Bus ticket",
+        "value": -50,
+        "currency": "eur",
+        "date": "2024-04-21"
+    },
+    {
+        "name": "Book shopping",
+        "value": -100,
+        "currency": "eur",
+        "date": "2024-04-20"
+    },
+    {
+        "name": "Board games",
+        "value": -26,
+        "currency": "eur",
+        "date": "2024-04-19"
+    },
+    {
+        "name": "Hotel booking",
+        "value": -300,
+        "currency": "eur",
+        "date": "2024-04-18"
+    },
+    {
+        "name": "Salary for March",
+        "value": 1450,
+        "currency": "eur",
+        "date": "2024-04-01"
+    },
+    {
+        "name": "Groceries - milk, meat and pasta",
+        "value": -130,
+        "currency": "eur",
+        "date": "2024-03-16"
+    },
+    {
+        "name": "Theater tickets",
+        "value": -47,
+        "currency": "eur",
+        "date": "2024-03-15"
+    },
+    {
+        "name": "Taxi cab",
+        "value": -50,
+        "currency": "eur",
+        "date": "2024-03-14"
+    },
+    {
+        "name": "Clothing shopping",
+        "value": -100,
+        "currency": "eur",
+        "date": "2024-03-13"
+    },
+    {
+        "name": "Electricity bill",
+        "value": -5,
+        "currency": "eur",
+        "date": "2024-03-12"
+    },
+    {
+        "name": "Coffee with friends",
+        "value": -27,
+        "currency": "eur",
+        "date": "2024-03-11"
+    },
+    {
+        "name": "Board games",
+        "value": -65,
+        "currency": "eur",
+        "date": "2024-03-10"
+    },
+    {
+        "name": "Restaurant bill",
+        "value": -44,
+        "currency": "eur",
+        "date": "2024-03-09"
+    },
+    {
+        "name": "New jacket for winter",
+        "value": -320,
+        "currency": "eur",
+        "date": "2024-03-08"
+    },
+    {
+        "name": "Pay for this month",
+        "value": 1000,
+        "currency": "eur",
+        "date": "2024-03-01"
+    }
+]

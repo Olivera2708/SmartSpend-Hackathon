@@ -63,5 +63,19 @@ def remove_emojis(text):
     return cleaned_text
 
 
+def chat(request):
+    with open("data.json") as file:
+        data = json.load(file)
+    response = client.chat.completions.create(
+        model="llama-13b-chat",
+        messages=[
+                {"role": "system", "content":
+                    "You are a financial asistant. You always give an intellingent answer to all of the requests your client gives. You take into the consideration the users data."},
+                {"role": "user", "content": request + "My data is " + json.dumps(data)}
+        ],
+        temperature=0.2
+    )
+    return response.choices[0].message.content
+
 if __name__=="__main__":
-    print("Spending tip -> " + get_spending_tip())
+    print(chat("I want to buy a car. Should I do it?"))

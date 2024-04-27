@@ -17,7 +17,7 @@ def get_spending_tip():
         ],
         temperature=0.8
     )
-    return remove_emojis(response.choices[0].message.content.split(".")[0].replace("\"", ""))
+    return remove_emojis(response.choices[0].message.content.split(".")[0].replace("\"", "") + ".")
 
 def get_category_tip():
     with open("data.json") as file:
@@ -31,19 +31,26 @@ def get_category_tip():
         ],
         temperature=1
     )
-    return response.choices[0].message.content
+    return remove_emojis(response.choices[0].message.content)
 
 def get_category(word):
     response = client.chat.completions.create(
         model="llama-13b-chat",
         messages=[
                 {"role": "system", "content":
-                    "You can reply with one of the following words: GROCERIES, BILLS, TRAVEL, TRANSPORT, FUN, OTHER"},
+                    """
+                    Categorize the users transaction into a category. Reply with only the category. Consither the following info:
+                    GROCERIES when you see: 'food', 'store', 'groceries', 'fruit', 'vegetables', 'meat', 'milk', 'dairy', 'bread', 'pasta', 'rice', 'cereal', 'snacks', 'beverages', 'produce', 'dairy & eggs', 'bakery', 'deli', 'frozen foods', 'canned goods', 'pantry staples', 'shopping list', 'shopping cart', 'grocery store', 'supermarket', 'aisle', 'checkout', 'sales', 'discounts', 'coupons', 'specials', 'organic', 'gluten-free', 'vegan', 'local', 'recipes', 'ingredients', 'meal prep', 'weekly meal plan', 'menu', 'cooking', 'baking', 'grilling', 'slow cooker', 'instant pot', 'nutrition', 'healthy eating', 'diet plan'.
+                    BILLS when you see: 'electricity','water bill', 'bill', 'utilities', 'fees', 'fine', 'membership', 'dues', 'phone', 'internet', 'rent'.
+                    TRAVEL when you see: 'flight', 'train', 'bus', 'car rental', 'hotel', 'accommodation', 'booking', 'reservation', 'ticket', 'travel agency', 'tour', 'vacation', 'holiday', 'destination', 'trip', 'journey', 'airport', 'seaport', 'cruise', 'cruise line', 'cabin', 'suite', 'tourist attraction', 'sightseeing', 'itinerary', 'passport', 'visa', 'insurance', 'luggage', 'baggage', 'packing', 'packing list', 'carry-on', 'checked baggage', 'boarding pass', 'departure', 'arrival', 'transfer', 'shuttle', 'taxi', 'rental car', 'rental service'.
+                    TRANSPORT when you see: 'transportation', 'transport', 'vehicle', 'car', 'bus', 'train', 'subway', 'metro', 'tram', 'bike', 'bicycle', 'motorcycle', 'scooter', 'taxi', 'cab', 'ride-hailing', 'Uber', 'Lyft', 'public transit', 'commute', 'commuter', 'commuting', 'driver', 'passenger', 'fare', 'ticket', 'route', 'schedule', 'map', 'stop', 'station', 'terminal', 'platform', 'lane', 'lane closure', 'traffic', 'congestion', 'accident', 'detour', 'roadwork', 'construction', 'parking', 'parking spot', 'parking garage', 'parking lot', 'parking meter', 'toll', 'toll booth', 'highway', 'freeway', 'expressway', 'motorway', 'bridge', 'tunnel', 'ferry', 'cruise', 'flight', 'airport', 'airline', 'boarding', 'departure', 'arrival', 'baggage', 'baggage claim', 'security', 'customs', 'immigration', 'passport control', 'boarding pass', 'gate', 'jet bridge', 'runway', 'taxiway', 'air traffic control', 'aircraft', 'airplane', 'aircraft type', 'seating', 'aisle', 'window seat', 'middle seat', 'exit row', 'overhead bin', 'seatbelt', 'in-flight', 'meal service', 'entertainment', 'WiFi', 'flight attendant', 'captain', 'pilot', 'co-pilot', 'cabin crew', 'airline policy', 'lost luggage', 'delay', 'cancellation', 'diversion', 'connecting flight', 'layover', 'transfer', 'shuttle', 'rental car', 'rental service', 'car rental', 'gas', 'fuel', 'electric vehicle', 'EV charging', 'charging station', 'charging port', 'maintenance', 'repair', 'roadside assistance'.
+                    FUN when you see: 'fun', 'entertainment', 'activities', 'recreation', 'leisure', 'play', 'amusement', 'pastime', 'enjoyment', 'hobby', 'game', 'playtime', 'fun time', 'outing', 'event', 'outing', 'adventure', 'excursion', 'explore', 'expedition', 'coffee', 'friends', 'party'.
+                    You can reply with one of the following words: GROCERIES, BILLS, TRAVEL, TRANSPORT, FUN, OTHER"""},
                 {"role": "user", "content": "put " + word + " in one of the categories (GROCERIES, BILLS, TRAVEL, TRANSPORT, FUN, OTHER). Reply with just the category"}
         ],
         temperature=0.2
     )
-    return response.choices[0].message.content
+    return remove_emojis(response.choices[0].message.content)
 
 
 def remove_emojis(text):
@@ -73,9 +80,9 @@ def chat(request):
                     "You are a financial asistant. You always give an intellingent answer to all of the requests your client gives. You take into the consideration the users data."},
                 {"role": "user", "content": request + "My data is " + json.dumps(data)}
         ],
-        temperature=0.2
+        temperature=0.7
     )
-    return response.choices[0].message.content
+    return remove_emojis(response.choices[0].message.content)
 
 if __name__=="__main__":
-    print(chat("I want to buy a car. Should I do it?"))
+    print(get_spending_tip())

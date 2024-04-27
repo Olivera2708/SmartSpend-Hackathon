@@ -1,65 +1,50 @@
-from openai import OpenAI
 import json
+from llamaapi import LlamaAPI
+from openai import OpenAI
 
-client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+# Initialize the SDK
+llama = LlamaAPI("LL-Z1MNZGxiDuLn5B0jNrIpf9NTQo2kEJf5V9mVqE6Nkdqi4dY6aE6ZMN2MLVMV7gjk")
 
-with open("data.json") as file:
-    transactions = json.load(file)
+client = OpenAI(api_key = "LL-Z1MNZGxiDuLn5B0jNrIpf9NTQo2kEJf5V9mVqE6Nkdqi4dY6aE6ZMN2MLVMV7gjk", base_url = "https://api.llama-api.com")
 
-history_for_tips_month = [
-    {"role": "system", "content":
-     """
-    You are able only to reply with one very short sentence (up to 10 words).
-    You are professional finance advisor and you are giving great answers.
-    Using the provided data you should generate tip for better managing income.
-    Here is the data you should take into considiration: 
-    """ + json.dumps(transactions)},
-    {"role": "user", "content": "Give me a great tip for saving money."}
-]
-
-history_for_tips_category = [
-    {"role": "system", "content": "You are able only to reply with one word"}
-]
-
-def generate_monthly_tip_response(history):
-    completion = client.chat.completions.create(
-        model="TheBloke/Llama-2-7B-Chat-GGUF",
-        messages=history,
-        temperature=50,
-        stream=True
+def get_spending_tip():
+    response = client.chat.completions.create(
+        model="llama-13b-chat",
+        messages=[
+            {"role": "system", "content": "Assistant is a large language model trained by OpenAI."},
+            {"role": "user", "content": "Give me an original financial tip for monthly spending up to 10 words"}
+        ],
+        temperature=2
     )
+    return response.choices[0].message.content
 
-    for chunk in completion:
-        if chunk.choices[0].delta.content:
-            print(chunk.choices[0].delta.content, end="", flush=True)
-            # new_message["content"] += chunk.choices[0].delta.content
+def get_category_tip():
+    with open("data.json") as file:
+        data = json.load(file)
+    response = client.chat.completions.create(
+        model="llama-13b-chat",
+        messages=[
+                {"role": "system", "content":
+                    "You can reply with one short sentence. You are a finance advisor providing tips for better managing income based on the data user gives."},
+                {"role": "user", "content": "Give me a very short tip, up to 10 words based on my data. Remove all the unnecessary words in your response. My data is: " + json.dumps(data)}
+        ],
+        temperature=1
+    )
+    return response.choices[0].message.content
 
-generate_monthly_tip_response(history_for_tips_month)
+def get_category(word):
+    response = client.chat.completions.create(
+        model="llama-13b-chat",
+        messages=[
+                {"role": "system", "content":
+                    "You can reply with one of the following words: GROCERIES, BILLS, TRAVEL, TRANSPORT, FUN, OTHER"},
+                {"role": "user", "content": "put " + word + " in one of the categories (GROCERIES, BILLS, TRAVEL, TRANSPORT, FUN, OTHER). Reply with just the category"}
+        ],
+        temperature=0.2
+    )
+    return response.choices[0].message.content
 
-# while True:
-#     completion = client.chat.completions.create(
-#         model="TheBloke/Llama-2-7B-Chat-GGUF",
-#         messages=history,
-#         temperature=0.7,
-#         stream=True,
-#     )
 
-#     new_message = {"role": "assistant", "content": ""}
-    
-#     for chunk in completion:
-#         if chunk.choices[0].delta.content:
-#             print(chunk.choices[0].delta.content, end="", flush=True)
-#             new_message["content"] += chunk.choices[0].delta.content
 
-#     history.append(new_message)
-    
-#     # Uncomment to see chat history
-#     # import json
-#     # gray_color = "\033[90m"
-#     # reset_color = "\033[0m"
-#     # print(f"{gray_color}\n{'-'*20} History dump {'-'*20}\n")
-#     # print(json.dumps(history, indent=2))
-#     # print(f"\n{'-'*55}\n{reset_color}")
-
-#     print()
-#     history.append({"role": "user", "content": input("> ")})
+if __name__=="__main__":
+    print(get_category("Coffee with friends"))

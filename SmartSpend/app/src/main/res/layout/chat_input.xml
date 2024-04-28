@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/input"
+                android:id="@+id/input_text"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@color/white"

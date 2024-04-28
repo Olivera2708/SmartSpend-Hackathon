@@ -37,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/you"
                 android:textSize="20dp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"/>
 
     </LinearLayout>
 

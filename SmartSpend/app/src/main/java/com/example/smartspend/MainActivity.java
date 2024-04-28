@@ -13,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         NavBar.setNavigationBar(findViewById(R.id.bottom_navigaiton), this, R.id.navigation_home);
-
+        ClientUtils.setClientUtils(getSharedPreferences("sharedPref", MODE_PRIVATE));
     }
 }

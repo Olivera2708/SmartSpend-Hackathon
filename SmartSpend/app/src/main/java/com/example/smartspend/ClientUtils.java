@@ -17,7 +17,7 @@ public class ClientUtils {
 
     //EXAMPLE: http://192.168.43.73:8080/api/
     public static SharedPreferences sharedPreferences = null;
-    public static final String SERVICE_API_PATH = "http://localhost:8080/api/v1/";
+    public static final String SERVICE_API_PATH = "http://localhost:8080";
 
     /*
      * Ovo ce nam sluziti za debug, da vidimo da li zahtevi i odgovori idu

@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,17 +39,22 @@ public class ChatActivity extends AppCompatActivity {
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText editText = input.findViewById(R.id.input);
+                EditText editText = input.findViewById(R.id.input_text);
                 editText.setText("");
                 String text = editText.getText().toString();
 
+                Log.d("testic", "MILAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
                 Chat chat = new Chat(true, text);
                 chats.add(chat);
-                LinearLayout newChat = findViewById(R.id.you_message);
+                LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
+                //LinearLayout newChat = findViewById(R.id.you_message);
+                View newChat = layoutInflater.inflate(R.layout.you_message, chatLayout, false);
                 TextView textView = newChat.findViewById(R.id.message);
                 textView.setText(text);
                 chatLayout.addView(newChat);
 
+                //ClientUtils clientUtils = new ClientUtils();
                 Call<String> call = ClientUtils.service.chat(text);
                 call.enqueue(new Callback<String>() {
                     @Override

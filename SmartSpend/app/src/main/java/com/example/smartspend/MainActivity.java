@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ClientUtils.setClientUtils(getSharedPreferences("sharedPref", MODE_PRIVATE));
         NavBar.setNavigationBar(findViewById(R.id.bottom_navigaiton), this, R.id.navigation_home);
-
+        ClientUtils.setClientUtils(getSharedPreferences("sharedPref", MODE_PRIVATE));
     }
 }

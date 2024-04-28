@@ -37,6 +37,7 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginStart="20sp"
                 android:text="Try spending less than you earn!"
+                android:textColor="@color/border_grey"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

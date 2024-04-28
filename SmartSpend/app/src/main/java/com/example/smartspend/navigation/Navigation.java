@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smartspend.ChartActivity;
+import com.example.smartspend.ChatActivity;
 import com.example.smartspend.MainActivity;
 import com.example.smartspend.ProfileActivity;
 import com.example.smartspend.R;
@@ -24,11 +25,11 @@ public class Navigation implements NavigationBarView.OnItemSelectedListener{
             currentActivity.startActivity(intent);
             currentActivity.overridePendingTransition(0,0);
             currentActivity.finish();
-//        } else if (item.getItemId() == R.id.navigation_chat) {
-//            Intent intent = new Intent(currentActivity, AccountDetailsActivity.class);
-//            currentActivity.startActivity(intent);
-//            currentActivity.overridePendingTransition(0,0);
-//            currentActivity.finish();
+        } else if (item.getItemId() == R.id.navigation_chat) {
+            Intent intent = new Intent(currentActivity, ChatActivity.class);
+            currentActivity.startActivity(intent);
+            currentActivity.overridePendingTransition(0,0);
+            currentActivity.finish();
         } else if (item.getItemId() == R.id.navigation_charts) {
             Intent intent = new Intent(currentActivity, ChartActivity.class);
             currentActivity.startActivity(intent);

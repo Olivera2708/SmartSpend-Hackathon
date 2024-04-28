@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">SmartSpend</string>
+    <string name="you"><b>You</b></string>
+    <string name="question">Should I buy a car?</string>
+    <string name="bot">Smart Spend Bot</string>
+    <string name="answer">Based on your current pay and past expenses, it appears that you\'ve been managing your finances responsibly. However, considering your financial situation, I would advise you to prioritize saving up for the time being.\n\n I recommend creating a monthly budget that includes a designated amount for savings. Aim to save a portion of your income consistently, even if it\'s a small amount initially. Over time, you can gradually increase your savings contributions as your financial situation improves.\n\nBy prioritizing saving now, you\'re laying a solid foundation for your future financial well-being.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

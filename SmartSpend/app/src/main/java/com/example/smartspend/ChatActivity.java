@@ -1,6 +1,7 @@
 package com.example.smartspend;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +32,7 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         NavBar.setNavigationBar(findViewById(R.id.bottom_navigaiton), this, R.id.navigation_chat);
 
-        RelativeLayout chatLayout = (android.widget.RelativeLayout) findViewById(R.id.chat_layout);
+        ConstraintLayout chatLayout = findViewById(R.id.chat_layout);
         View input = chatLayout.findViewById(R.id.input);
         ImageView requestButton = input.findViewById(R.id.imageView2);
         requestButton.setOnClickListener(new View.OnClickListener() {

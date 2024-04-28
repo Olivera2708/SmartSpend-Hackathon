@@ -104,6 +104,8 @@ def add(json_string):
 
     # Parse the JSON string to a Python dictionary
     new_transaction = json.loads(json_string)
+    category = get_category(new_transaction["name"])
+    new_transaction["type"] = category
 
     # Add the new transaction to the existing data
     data.append(new_transaction)

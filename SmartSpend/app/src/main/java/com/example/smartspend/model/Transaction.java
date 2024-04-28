@@ -6,7 +6,7 @@ public class Transaction {
     @Expose
     private String name;
     @Expose
-    private int value;
+    private double value;
     @Expose
     private String currency;
     @Expose
@@ -17,18 +17,19 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(String name, int value, String currency, String date) {
+    public Transaction(String name, int value, String currency, String date, String type) {
         this.name = name;
         this.value = value;
         this.currency = currency;
         this.date = date;
+        this.type = type;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 

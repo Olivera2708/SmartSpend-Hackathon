@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.smartspend.model.Transaction;
+import com.example.smartspend.navigation.NavBar;
 
 import java.util.ArrayList;
 
@@ -21,13 +22,11 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 
     public ArrayList<Transaction> transactions;
     Context context;
-    SharedPreferences sharedPreferences;
 
-    public TransactionAdapter(Context context, ArrayList<Transaction> transactions, SharedPreferences sharedPreferences){
+    public TransactionAdapter(Context context, ArrayList<Transaction> transactions){
         super(context, R.layout.transaction_card, transactions);
         this.transactions = transactions;
         this.context = context;
-        this.sharedPreferences = sharedPreferences;
     }
     /*
      * Ova metoda vraca ukupan broj elemenata u listi koje treba prikazati
@@ -79,6 +78,11 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
         TextView type = convertView.findViewById(R.id.type);
         TextView value = convertView.findViewById(R.id.value);
         ImageView image = convertView.findViewById(R.id.icon);
+
+        name.setText(transaction.getName());
+        date.setText(transaction.getDate());
+        type.setText(transaction.getType());
+        value.setText(transaction.getValue() + " " + transaction.getCurrency());
 
         if(transaction != null){
             if(transaction.getType().equals("TRAVEL")) {

@@ -26,7 +26,9 @@ class MyServer(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(bytes(str(main.get_all()), "utf-8"))
+            dict = {"value": main.get_all()}
+            json_data = json.dumps(dict)
+            self.wfile.write(json_data.encode("utf-8"))
         else:
             self.send_response(404)
             self.end_headers()

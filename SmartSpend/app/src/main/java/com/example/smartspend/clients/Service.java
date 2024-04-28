@@ -1,7 +1,9 @@
 package com.example.smartspend.clients;
+import com.example.smartspend.model.HomeCard;
 import com.example.smartspend.model.Tip;
 import com.example.smartspend.model.Transaction;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public interface Service {
             "Content-Type:application/json"
     })
     @GET("/get_all")
-    Call<List<Transaction>> getAll();
+    Call<HomeCard> getAll();
 
     @Headers({
             "User-Agent: Mobile-Android",

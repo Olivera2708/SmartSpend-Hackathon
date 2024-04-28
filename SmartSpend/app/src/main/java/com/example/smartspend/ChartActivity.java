@@ -17,6 +17,9 @@ public class ChartActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
 
+        ChartViewPagerAdapter chartViewPagerAdapter = new ChartViewPagerAdapter(this);
+        viewPager2.setAdapter(chartViewPagerAdapter);
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

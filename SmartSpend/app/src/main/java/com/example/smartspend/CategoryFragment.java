@@ -1,5 +1,6 @@
 package com.example.smartspend;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,8 +25,15 @@ public class CategoryFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Activity activity;
+
     public CategoryFragment() {
         // Required empty public constructor
+    }
+
+    public CategoryFragment(Activity activity) {
+        // Required empty public constructor
+        this.activity = activity;
     }
 
     /**
@@ -42,6 +50,13 @@ public class CategoryFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static CategoryFragment newInstance(Activity activity){
+        CategoryFragment fragment = new CategoryFragment(activity);
+        Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }

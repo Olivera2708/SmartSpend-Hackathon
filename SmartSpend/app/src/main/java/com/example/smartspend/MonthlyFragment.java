@@ -1,5 +1,6 @@
 package com.example.smartspend;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,8 +25,14 @@ public class MonthlyFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private Activity activity;
+
     public MonthlyFragment() {
         // Required empty public constructor
+    }
+
+    public MonthlyFragment(Activity activity) {
+        this.activity = activity;
     }
 
     /**
@@ -42,6 +49,13 @@ public class MonthlyFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static MonthlyFragment newInstance(Activity activity){
+        MonthlyFragment fragment = new MonthlyFragment(activity);
+        Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }

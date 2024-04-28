@@ -84,5 +84,31 @@ def chat(request):
     )
     return remove_emojis(response.choices[0].message.content)
 
+def get_all():
+    with open("data.json") as file:
+        data = json.load(file)
+        return data
+
+def add(json_string):
+    try:
+        # Load the existing data from data.json
+        with open('data.json', 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        # If the file doesn't exist, create an empty list
+        data = []
+
+    # Parse the JSON string to a Python dictionary
+    new_transaction = json.loads(json_string)
+
+    # Add the new transaction to the existing data
+    data.append(new_transaction)
+
+    # Write the updated data back to data.json
+    with open('data.json', 'w') as file:
+        json.dump(data, file, indent=4)
+    
+    return json_string
+
 if __name__=="__main__":
     print(get_spending_tip())

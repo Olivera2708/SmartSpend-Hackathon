@@ -124,5 +124,11 @@
         "value": 1000,
         "currency": "eur",
         "date": "2024-03-01"
+    },
+    {
+        "name": "New T-shirt",
+        "value": -60,
+        "currency": "eur",
+        "date": "2024-04-27"
     }
 ]

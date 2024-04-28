@@ -132,7 +132,7 @@ public class MonthlyFragment extends Fragment {
         Random random = new Random();
 
         for (int i = 1; i < 10; i++) {
-            lineEntries1.add(new Entry(i, balance - 1 - random.nextInt(100)));
+            lineEntries1.add(new Entry(i, balance - 1 - random.nextInt(300)));
         }
 
 

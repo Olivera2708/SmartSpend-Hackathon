@@ -82,6 +82,7 @@
         app:itemIconTint="@color/icon_selector"
         app:itemTextColor="@color/text_selector"
         android:background="#FAFAFA"
+        app:itemActiveIndicatorStyle="@android:color/transparent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

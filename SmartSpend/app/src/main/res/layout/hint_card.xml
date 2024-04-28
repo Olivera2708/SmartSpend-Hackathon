@@ -32,11 +32,11 @@
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="300dp"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginStart="20sp"
-                android:text=""
+                android:text="Thinking..."
                 android:textColor="@color/border_grey"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

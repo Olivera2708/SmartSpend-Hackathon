@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.smartspend.model.Chat;
@@ -26,6 +27,7 @@ import retrofit2.Response;
 public class ChatActivity extends AppCompatActivity {
 
     ArrayList<Chat> chats = new ArrayList<>();
+    ScrollView scrollView;
     //View chatLayout;
 
     @Override
@@ -34,8 +36,9 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         NavBar.setNavigationBar(findViewById(R.id.bottom_navigaiton), this, R.id.navigation_chat);
 
-        ConstraintLayout chatLayout = findViewById(R.id.chat_layout);
-        View input = chatLayout.findViewById(R.id.input);
+        scrollView = findViewById(R.id.scroll);
+        LinearLayout chatLayout = findViewById(R.id.chat_layout);
+        View input = findViewById(R.id.input);
         ImageView requestButton = input.findViewById(R.id.imageView2);
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +53,10 @@ public class ChatActivity extends AppCompatActivity {
                 View newChat = layoutInflater.inflate(R.layout.you_message, chatLayout, false);
                 TextView textView = newChat.findViewById(R.id.message);
                 textView.setText(text);
-                chatLayout.addView(newChat, chatLayout.getChildCount()-1);
+                chatLayout.addView(newChat, chatLayout.getChildCount());
+
+                // After adding the new chat, scroll to the bottom
+                scrollView.post(() -> scrollView.fullScroll(ScrollView.FOCUS_DOWN));
 
                 Call<Tip> call = ClientUtils.service.chat(text);
                 call.enqueue(new Callback<Tip>() {
@@ -62,7 +68,10 @@ public class ChatActivity extends AppCompatActivity {
                         View newChat = layoutInflater.inflate(R.layout.bot_message, chatLayout, false);
                         TextView textView = newChat.findViewById(R.id.message);
                         textView.setText(response.body().getValue());
-                        chatLayout.addView(newChat, chatLayout.getChildCount()-1);
+                        chatLayout.addView(newChat, chatLayout.getChildCount());
+
+                        // After adding the new chat, scroll to the bottom
+                        scrollView.post(() -> scrollView.fullScroll(ScrollView.FOCUS_DOWN));
                     }
 
                     @Override

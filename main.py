@@ -81,7 +81,7 @@ def chat(request):
         model="llama-13b-chat",
         messages=[
                 {"role": "system", "content":
-                    "You are a financial asistant. You always give an intellingent answer to all of the requests yzour client gives. You take into the consideration the users data."},
+                    "You are a financial asistant. You always give an intellingent and short answers (up to 3 sentences), to all of the requests your client gives. You take into the consideration the users data."},
                 {"role": "user", "content": request + "My data is " + json.dumps(data) + ". My goals are: " + json.dumps(goals)}
         ],
         temperature=0.7

@@ -37,14 +37,14 @@ public interface Service {
             "Content-Type:application/json"
     })
     @GET("/spending_tip")
-    Call<List<Transaction>> spendingTip();
+    Call<String> spendingTip();
 
     @Headers({
             "User-Agent: Mobile-Android",
             "Content-Type:application/json"
     })
     @GET("/category_tip")
-    Call<List<Transaction>> categoryTip();
+    Call<String> categoryTip();
 
     @Headers({
             "User-Agent: Mobile-Android",

@@ -33,6 +33,7 @@
             tools:layout_editor_absoluteX="10dp" />
 
         <include
+            android:id="@+id/prvi"
             layout="@layout/hint_card"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

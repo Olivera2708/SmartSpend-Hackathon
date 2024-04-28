@@ -11,6 +11,8 @@ public class Transaction {
     private String currency;
     @Expose
     private String date;
+    @Expose
+    private String type;
 
     public Transaction() {
     }
@@ -52,5 +54,13 @@ public class Transaction {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

@@ -3,132 +3,154 @@
         "name": "Plane tickets for Barcelona",
         "value": -600,
         "currency": "eur",
-        "date": "2024-04-27"
+        "date": "2024-04-27",
+        "type": "TRAVEL"
     },
     {
         "name": "Groceries for this week",
         "value": -80,
         "currency": "eur",
-        "date": "2024-04-26"
+        "date": "2024-04-26",
+        "type": "GROCERIES"
     },
     {
         "name": "A new pair of jeans",
         "value": -20,
         "currency": "eur",
-        "date": "2024-04-25"
+        "date": "2024-04-25",
+        "type": "OTHER"
     },
     {
         "name": "Salary for April",
         "value": 1700,
         "currency": "eur",
-        "date": "2024-04-24"
+        "date": "2024-04-24",
+        "type": "OTHER"
     },
     {
         "name": "Drinks for party",
         "value": -30,
         "currency": "eur",
-        "date": "2024-04-23"
+        "date": "2024-04-23",
+        "type": "FUN"
     },
     {
         "name": "Bills for this month",
         "value": -120,
         "currency": "eur",
-        "date": "2024-04-22"
+        "date": "2024-04-22",
+        "type": "BILLS"
     },
     {
         "name": "Bus ticket",
         "value": -50,
         "currency": "eur",
-        "date": "2024-04-21"
+        "date": "2024-04-21",
+        "type": "TRANSPORT"
     },
     {
         "name": "Book shopping",
         "value": -100,
         "currency": "eur",
-        "date": "2024-04-20"
+        "date": "2024-04-20",
+        "type": "OTHER"
     },
     {
         "name": "Board games",
         "value": -26,
         "currency": "eur",
-        "date": "2024-04-19"
+        "date": "2024-04-19",
+        "type": "FUN"
     },
     {
         "name": "Hotel booking",
         "value": -300,
         "currency": "eur",
-        "date": "2024-04-18"
+        "date": "2024-04-18",
+        "type": "TRAVEL"
     },
     {
         "name": "Salary for March",
         "value": 1450,
         "currency": "eur",
-        "date": "2024-04-01"
+        "date": "2024-04-01",
+        "type": "OTHER"
     },
     {
         "name": "Groceries - milk, meat and pasta",
         "value": -130,
         "currency": "eur",
-        "date": "2024-03-16"
+        "date": "2024-03-16",
+        "type": "GROCERIES"
     },
     {
         "name": "Theater tickets",
         "value": -47,
         "currency": "eur",
-        "date": "2024-03-15"
+        "date": "2024-03-15",
+        "type": "FUN"
     },
     {
         "name": "Taxi cab",
         "value": -50,
         "currency": "eur",
-        "date": "2024-03-14"
+        "date": "2024-03-14",
+        "type": "TRANSPORT"
     },
     {
         "name": "Clothing shopping",
         "value": -100,
         "currency": "eur",
-        "date": "2024-03-13"
+        "date": "2024-03-13",
+        "type": "OTHER"
     },
     {
         "name": "Electricity bill",
         "value": -5,
         "currency": "eur",
-        "date": "2024-03-12"
+        "date": "2024-03-12",
+        "type": "BILLS"
     },
     {
         "name": "Coffee with friends",
         "value": -27,
         "currency": "eur",
-        "date": "2024-03-11"
+        "date": "2024-03-11",
+        "type": "FUN"
     },
     {
         "name": "Board games",
         "value": -65,
         "currency": "eur",
-        "date": "2024-03-10"
+        "date": "2024-03-10",
+        "type": "FUN"
     },
     {
         "name": "Restaurant bill",
         "value": -44,
         "currency": "eur",
-        "date": "2024-03-09"
+        "date": "2024-03-09",
+        "type": "BILLS"
     },
     {
         "name": "New jacket for winter",
         "value": -320,
         "currency": "eur",
-        "date": "2024-03-08"
+        "date": "2024-03-08",
+        "type": "OTHER"
     },
     {
         "name": "Pay for this month",
         "value": 1000,
         "currency": "eur",
-        "date": "2024-03-01"
+        "date": "2024-03-01",
+        "type": "OTHER"
     },
     {
         "name": "New T-shirt",
         "value": -60,
         "currency": "eur",
-        "date": "2024-04-27"
+        "date": "2024-04-27",
+        "type": "OTHER"
     }
 ]

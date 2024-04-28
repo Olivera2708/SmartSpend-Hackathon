@@ -42,7 +42,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="500dp"
                 app:layout_constrainedHeight="true"
                 app:layout_constraintTop_toBottomOf="@+id/textView2">
 

@@ -1,6 +1,7 @@
 package com.example.smartspend;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +38,7 @@ public class CategoryFragment extends Fragment {
     private String mParam2;
 
     Activity activity;
+    BarChart barChart;
 
     public CategoryFragment() {
         // Required empty public constructor
@@ -73,7 +86,46 @@ public class CategoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false);
+        View view = inflater.inflate(R.layout.fragment_category, container, false);
+        barChart = view.findViewById(R.id.chart2);
+
+        getData();
+        return view;
+    }
+
+    private void getData(){
+        List<BarEntry> barEntries = new ArrayList<>();
+
+        barEntries.add(new BarEntry(0, 324));
+        barEntries.add(new BarEntry(1, 490));
+        barEntries.add(new BarEntry(2, 275));
+        barEntries.add(new BarEntry(3, 54));
+        barEntries.add(new BarEntry(4, 121));
+        barEntries.add(new BarEntry(5, 80));
+
+        BarDataSet barDataSet = new BarDataSet(barEntries, "");
+        barDataSet.setValueFormatter(new DefaultValueFormatter(0));
+
+        barDataSet.setColors(new int[]{Color.rgb(168,217,246)});
+        barDataSet.setValueTextSize(10f);
+
+        BarData barData = new BarData(barDataSet);
+
+        barChart.setData(barData);
+        barChart.getDescription().setEnabled(false);
+        barChart.getLegend().setEnabled(false);
+        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        barChart.getAxisRight().setEnabled(false);
+        final String[] labels = new String[]{"Groceries", "Bills", "Travel", "Transport", "Fun", "Other"};
+        barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
+        barChart.getXAxis().setGranularity(1f);
+        barChart.getXAxis().setGranularityEnabled(true);
+        barChart.getXAxis().setDrawLabels(true);
+
+        barChart.getXAxis().setDrawGridLines(false);
+        barChart.getAxisLeft().setDrawGridLines(false);
+        barChart.getAxisRight().setDrawGridLines(false);
+
+        barChart.invalidate();
     }
 }

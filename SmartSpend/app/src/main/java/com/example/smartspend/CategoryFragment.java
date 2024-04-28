@@ -18,6 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.example.smartspend.model.Tip;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -99,16 +100,16 @@ public class CategoryFragment extends Fragment {
         ConstraintLayout cv = view.findViewById(R.id.drugi);
         TextView tv = cv.findViewById(R.id.name);
 
-        Call<String> call = ClientUtils.service.categoryTip();
-        call.enqueue(new Callback<String>() {
+        Call<Tip> call = ClientUtils.service.categoryTip();
+        call.enqueue(new Callback<Tip>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.d("RRRR", response.body());
-                tv.setText(response.body());
+            public void onResponse(Call<Tip> call, Response<Tip> response) {
+                Log.d("RRRR", response.body().getValue());
+                tv.setText(response.body().getValue());
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<Tip> call, Throwable t) {
                 Log.d("FFFFF", t.getMessage());
 
             }

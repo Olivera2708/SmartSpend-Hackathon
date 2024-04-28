@@ -1,4 +1,5 @@
 package com.example.smartspend.clients;
+import com.example.smartspend.model.Tip;
 import com.example.smartspend.model.Transaction;
 
 import java.util.Collection;
@@ -37,14 +38,14 @@ public interface Service {
             "Content-Type:application/json"
     })
     @GET("/spending_tip")
-    Call<String> spendingTip();
+    Call<Tip> spendingTip();
 
     @Headers({
             "User-Agent: Mobile-Android",
             "Content-Type:application/json"
     })
     @GET("/category_tip")
-    Call<String> categoryTip();
+    Call<Tip> categoryTip();
 
     @Headers({
             "User-Agent: Mobile-Android",
@@ -65,5 +66,5 @@ public interface Service {
             "Content-Type:application/json"
     })
     @POST("/chat")
-    Call<String> chat(@Body String request);
+    Call<Tip> chat(@Body String request);
 }

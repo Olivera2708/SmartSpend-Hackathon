@@ -6,6 +6,22 @@
     android:background="@color/white"
     android:id="@+id/chat_layout">
 
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="170dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/chat_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+<!--                </LinearLayout>-->
+<!--        </ScrollView>-->
+
         <include
             android:id="@+id/input"
             layout="@layout/chat_input"

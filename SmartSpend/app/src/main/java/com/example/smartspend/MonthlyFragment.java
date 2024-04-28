@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.smartspend.model.Tip;
 import com.example.smartspend.model.Transaction;
 
 import java.util.List;
@@ -104,17 +105,16 @@ public class MonthlyFragment extends Fragment {
         ConstraintLayout cv = view.findViewById(R.id.prvi);
         TextView tv = cv.findViewById(R.id.name);
 
-        Log.d("ISPISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS", ClientUtils.SERVICE_API_PATH);
-        Call<String> call = ClientUtils.service.spendingTip();
-        call.enqueue(new Callback<String>() {
+        Call<Tip> call = ClientUtils.service.spendingTip();
+        call.enqueue(new Callback<Tip>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.d("RRRR", response.body());
-                tv.setText(response.body());
+            public void onResponse(Call<Tip> call, Response<Tip> response) {
+                Log.d("RRRR", response.body().getValue());
+                tv.setText(response.body().getValue());
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<Tip> call, Throwable t) {
                 Log.d("FFFFF", t.getMessage());
 
             }
@@ -135,7 +135,6 @@ public class MonthlyFragment extends Fragment {
             lineEntries1.add(new Entry(i, balance - 1 - random.nextInt(100)));
         }
 
-//        int textColor = isDarkTheme(getContext()) ? Color.WHITE : Color.BLACK;
 
         LineDataSet lineDataSet1 = new LineDataSet(lineEntries1, "Monthly transactions");
         lineDataSet1.setColor(Color.rgb(168,217,246));

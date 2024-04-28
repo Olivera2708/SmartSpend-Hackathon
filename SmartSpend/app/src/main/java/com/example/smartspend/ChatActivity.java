@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.smartspend.model.Chat;
+import com.example.smartspend.model.Tip;
 import com.example.smartspend.navigation.NavBar;
 
 import java.util.ArrayList;
@@ -40,38 +41,33 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText editText = input.findViewById(R.id.input_text);
-                editText.setText("");
                 String text = editText.getText().toString();
-
-                Log.d("testic", "MILAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                editText.setText("");
 
                 Chat chat = new Chat(true, text);
                 chats.add(chat);
                 LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
-                //LinearLayout newChat = findViewById(R.id.you_message);
                 View newChat = layoutInflater.inflate(R.layout.you_message, chatLayout, false);
                 TextView textView = newChat.findViewById(R.id.message);
                 textView.setText(text);
-                chatLayout.addView(newChat);
+                chatLayout.addView(newChat, chatLayout.getChildCount()-1);
 
-                //ClientUtils clientUtils = new ClientUtils();
-                Call<String> call = ClientUtils.service.chat(text);
-                call.enqueue(new Callback<String>() {
+                Call<Tip> call = ClientUtils.service.chat(text);
+                call.enqueue(new Callback<Tip>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        if (response.code() == 200 && response.body() != null) {
-                            Chat chat2 = new Chat(false, response.body());
-                            chats.add(chat2);
-                            LinearLayout newChat2 = findViewById(R.id.you_message);
-                            TextView textView = newChat2.findViewById(R.id.message);
-                            textView.setText(response.body());
-                            chatLayout.addView(newChat2);
-                        }
+                    public void onResponse(Call<Tip> call, Response<Tip> response) {
+                        Chat chat2 = new Chat(false, response.body().getValue());
+                        chats.add(chat2);
+                        LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
+                        View newChat = layoutInflater.inflate(R.layout.bot_message, chatLayout, false);
+                        TextView textView = newChat.findViewById(R.id.message);
+                        textView.setText(response.body().getValue());
+                        chatLayout.addView(newChat, chatLayout.getChildCount()-1);
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
-                        Log.d("Error", "Top accommodations");
+                    public void onFailure(Call<Tip> call, Throwable t) {
+                        Log.d("Error123", t.getMessage());
                     }
                 });
             }

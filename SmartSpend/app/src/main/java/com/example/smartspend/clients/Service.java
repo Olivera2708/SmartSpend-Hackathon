@@ -59,4 +59,11 @@ public interface Service {
     })
     @POST("/add")
     Call<Transaction> add(@Body Transaction user);
+
+    @Headers({
+            "User-Agent: Mobile-Android",
+            "Content-Type:application/json"
+    })
+    @POST("/chat")
+    Call<String> chat(@Body String request);
 }

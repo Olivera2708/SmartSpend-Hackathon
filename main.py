@@ -22,12 +22,14 @@ def get_spending_tip():
 def get_category_tip():
     with open("data.json") as file:
         data = json.load(file)
+    with open("goals.json") as file:
+        goals = json.load(file)
     response = client.chat.completions.create(
         model="llama-13b-chat",
         messages=[
                 {"role": "system", "content":
                     "You can reply with one short sentence. You are a finance advisor providing tips for better managing income based on the data user gives."},
-                {"role": "user", "content": "Give me a very short tip, up to 10 words based on my data. Remove all the unnecessary words in your response. My data is: " + json.dumps(data)}
+                {"role": "user", "content": "Give me a very short tip, up to 10 words based on my data. Remove all the unnecessary words in your response. My goals are: " + json.dumps(goals) + ". My data is: " + json.dumps(data)}
         ],
         temperature=1
     )
@@ -73,12 +75,14 @@ def remove_emojis(text):
 def chat(request):
     with open("data.json") as file:
         data = json.load(file)
+    with open("goals.json") as file:
+        goals = json.load(file)
     response = client.chat.completions.create(
         model="llama-13b-chat",
         messages=[
                 {"role": "system", "content":
-                    "You are a financial asistant. You always give an intellingent answer to all of the requests your client gives. You take into the consideration the users data."},
-                {"role": "user", "content": request + "My data is " + json.dumps(data)}
+                    "You are a financial asistant. You always give an intellingent answer to all of the requests yzour client gives. You take into the consideration the users data."},
+                {"role": "user", "content": request + "My data is " + json.dumps(data) + ". My goals are: " + json.dumps(goals)}
         ],
         temperature=0.7
     )

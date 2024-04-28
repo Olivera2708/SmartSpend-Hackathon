@@ -160,7 +160,7 @@
         app:menu="@menu/navbar"
         app:itemIconTint="@color/icon_selector"
         app:itemTextColor="@color/text_selector"
-        android:background="#F1F1F1"
+        android:background="#FAFAFA"
         />
 
 

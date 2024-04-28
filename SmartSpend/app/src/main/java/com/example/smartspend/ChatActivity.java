@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.smartspend.model.Chat;
+import com.example.smartspend.navigation.NavBar;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,7 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        NavBar.setNavigationBar(findViewById(R.id.bottom_navigaiton), this, R.id.navigation_chat);
 
         RelativeLayout chatLayout = (android.widget.RelativeLayout) findViewById(R.id.chat_layout);
         View input = chatLayout.findViewById(R.id.input);

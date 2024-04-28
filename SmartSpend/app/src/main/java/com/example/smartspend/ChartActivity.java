@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.smartspend.navigation.NavBar;
 import com.google.android.material.tabs.TabLayout;
 
 public class ChartActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class ChartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
+        NavBar.setNavigationBar(findViewById(R.id.bottom_navigaiton), this, R.id.navigation_charts);
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);

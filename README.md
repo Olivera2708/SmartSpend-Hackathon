@@ -5,7 +5,7 @@ SmartSpend is an innovative financial advisor application developed during the E
 ## About the App
 SmartSpend helps you manage your finances by allowing you to enter your income, expenses, and financial goals. The app provides personalized tips and advice for better spending and saving money. Additionally, SmartSpend includes an integrated chat feature where you can ask questions to an LLM-powered assistant for financial guidance.
 
-SmartSpend also offers graphical representations of your spending habits, making it easier to visualize where your money goes. The LLM is capable of categorizing your expenses based on the names you enter, providing a clearer picture of your financial activities.
+SmartSpend also offers graphical representations of your spending habits, making it easier to visualize where your money goes. The LLM is capable of categorizing your expenses based on the names you enter, providing a clearer picture of your financial activities. The app's design is modern and functional, ensuring a seamless and intuitive user experience.
 
 ## Features
 - **Income and Expense Tracking**: Log your financial data, including income, expenses, and financial goals.
@@ -22,17 +22,21 @@ SmartSpend also offers graphical representations of your spending habits, making
 4. **Track Your Progress**: Monitor your income, expenses, and goals to see how you're improving.
 
 ## Important Notes
-SmartSpend was developed during a 24-hour hackathon, so some features may not be fully completed. However, all key features are functional. The backend is written in Python and was running using AWS EC2 instances during development. 
+SmartSpend was developed during a 24-hour hackathon, so some features may not be fully completed. However, all key features are functional.
 
-## Future plans
-In the future, we aim to discuss with banks and see if they would like to integrate SmartSpend into their mobile banking applications. This would allow users to benefit from SmartSpend's features directly within their banking apps.
+## Backend and Frontend
+- The backend of SmartSpend is written in Python and uses the Llama 2 Large Language Model. During development, it was running on AWS EC2 instances, but it can also be configured to run locally. This flexibility allows you to experiment with different setups, depending on your resources and needs.
+- The frontend is developed using Android Studio with Java, designed to be modern and functional, and providing a seamless user experience.
+
+## Future Plans
+In the future, we aim to discuss with banks to see if they would like to integrate SmartSpend into their mobile banking applications. This would allow users to benefit from SmartSpend's features directly within their banking apps.
 
 ## Authors
 
-* Olivera Radovanović - [GitHub](https://github.com/Olivera2708)
-* Mila Milović - [GitHub](https://github.com/milamilovic)
-* Miloš Bojanić - [GitHub](https://github.com/milosbojanic)
-  
+- Olivera Radovanović - [GitHub](https://github.com/Olivera2708)
+- Mila Milović - [GitHub](https://github.com/milamilovic)
+- Miloš Bojanić - [GitHub](https://github.com/milosbojanic)
+
 ---
 
 We hope you find SmartSpend helpful on your financial journey. If you have any questions or feedback, please let us know.

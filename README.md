@@ -27,6 +27,12 @@ SmartSpend was developed during a 24-hour hackathon, so some features may not be
 ## Future plans
 In the future, we aim to discuss with banks and see if they would like to integrate SmartSpend into their mobile banking applications. This would allow users to benefit from SmartSpend's features directly within their banking apps.
 
+## Authors
+
+* Olivera Radovanović - [GitHub](https://github.com/Olivera2708)
+* Mila Milović - [GitHub](https://github.com/milamilovic)
+* Miloš Bojanić - [GitHub](https://github.com/milosbojanic)
+  
 ---
 
 We hope you find SmartSpend helpful on your financial journey. If you have any questions or feedback, please let us know.

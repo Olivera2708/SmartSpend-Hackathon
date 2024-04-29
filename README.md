@@ -35,15 +35,15 @@ SmartSpend also offers graphical representations of your spending habits, making
   <img src="images/Charts.png" width="240"/>
 </p>
 
-## Important Notes
-SmartSpend was developed during a 24-hour hackathon, so some features may not be fully completed. However, all key features are functional.
-
 ## Backend and Frontend
 - The backend of SmartSpend is written in Python and uses the Llama 2 Large Language Model. During development, it was running on AWS EC2 instances, but it can also be configured to run locally. This flexibility allows you to experiment with different setups, depending on your resources and needs.
 - The frontend is developed using Android Studio with Java, designed to be modern and functional, and providing a seamless user experience.
 
 ## Future Plans
 In the future, we aim to discuss with banks to see if they would like to integrate SmartSpend into their mobile banking applications. This would allow users to benefit from SmartSpend's features directly within their banking apps.
+
+## Important Notes
+SmartSpend was developed during a 24-hour hackathon, so some features may not be fully completed. However, all key features are functional.
 
 ## Authors
 

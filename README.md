@@ -7,6 +7,10 @@ SmartSpend helps you manage your finances by allowing you to enter your income, 
 
 SmartSpend also offers graphical representations of your spending habits, making it easier to visualize where your money goes. The LLM is capable of categorizing your expenses based on the names you enter, providing a clearer picture of your financial activities. The app's design is modern and functional, ensuring a seamless and intuitive user experience.
 
+<div align="center">
+  <img src="images/demo.mov" alt="Preview">
+</div>
+
 ## Features
 - **Income and Expense Tracking**: Log your financial data, including income, expenses, and financial goals.
 - **Personalized Financial Advice**: Receive customized tips and suggestions on how to optimize your spending and saving habits.
@@ -15,11 +19,21 @@ SmartSpend also offers graphical representations of your spending habits, making
 - **Automated Expense Categorization**: The LLM categorizes your expenses based on the names you enter, making it easier to manage your budget.
 - **Goal Tracking**: Define your financial goals and get feedback on your progress toward achieving them.
 
+<p align="center">
+  <img src="images/Home.png" width="240"/>
+  <img src="images/Chat.png" width="240"/>
+</p>
+
 ## How to Use
 1. **Define Your Goals**: Set your short-term and long-term financial goals.
 2. **Start Getting Advice**: Use the chat feature to ask the LLM-powered assistant for tips on budgeting, saving, or general financial advice.
 3. **Visualize Your Spending**: View the graphs to understand your spending habits and how they change over time.
 4. **Track Your Progress**: Monitor your income, expenses, and goals to see how you're improving.
+
+<p align="center">
+  <img src="images/Profile.png" width="240"/>
+  <img src="images/Charts.png" width="240"/>
+</p>
 
 ## Important Notes
 SmartSpend was developed during a 24-hour hackathon, so some features may not be fully completed. However, all key features are functional.

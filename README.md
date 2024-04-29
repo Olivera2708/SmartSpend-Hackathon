@@ -7,7 +7,9 @@ SmartSpend helps you manage your finances by allowing you to enter your income, 
 
 SmartSpend also offers graphical representations of your spending habits, making it easier to visualize where your money goes. The LLM is capable of categorizing your expenses based on the names you enter, providing a clearer picture of your financial activities. The app's design is modern and functional, ensuring a seamless and intuitive user experience.
 
-<iframe src="images/demo" frameborder="0" allowfullscreen></iframe>
+<div align="center">
+  <img src="images/demo.mp4" alt="Preview">
+</div>
 
 ## Features
 - **Income and Expense Tracking**: Log your financial data, including income, expenses, and financial goals.

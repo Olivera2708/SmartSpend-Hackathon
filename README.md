@@ -20,7 +20,7 @@ SmartSpend also offers graphical representations of your spending habits, making
 - **Goal Tracking**: Define your financial goals and get feedback on your progress toward achieving them.
 
 <p align="center">
-  <img src="images/Home.png" width="240"/>
+  <img src="images/Transactions.png" width="240"/>
   <img src="images/Chat.png" width="240"/>
 </p>
 
